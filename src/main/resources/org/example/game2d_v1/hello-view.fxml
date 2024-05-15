@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.game2d_v1.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.game2d_v1.HelloController">
+   <children>
+      <ImageView fx:id="bg1" fitHeight="400.0" fitWidth="714.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/Background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="bg2" fitHeight="400.0" fitWidth="714.0" layoutX="705.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/Background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player" fitHeight="151.0" fitWidth="141.0" layoutX="21.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/Human.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy" fitHeight="54.0" fitWidth="53.0" layoutX="872.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/pngwing.com.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lablepause" focusTraversable="false" layoutX="251.0" layoutY="136.0" text="Pause" visible="false">
+         <font>
+            <Font name="Algerian" size="65.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
