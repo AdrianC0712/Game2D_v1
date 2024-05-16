@@ -38,8 +38,6 @@ public class HelloApplication extends Application {
                 HelloController.isPause = !HelloController.isPause;
         });
 
-
-
         stage.show();
     }
 

@@ -19,17 +19,28 @@
             <Image url="@../../../images/Background.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="player" fitHeight="151.0" fitWidth="141.0" layoutX="21.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="player" fitHeight="151.0" fitWidth="128.0" layoutX="20.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/Human.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="enemy" fitHeight="54.0" fitWidth="53.0" layoutX="872.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="enemy" fitHeight="33.0" fitWidth="34.0" layoutX="891.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/pngwing.com.png" />
          </image>
       </ImageView>
       <Label fx:id="lablepause" focusTraversable="false" layoutX="251.0" layoutY="136.0" text="Pause" visible="false">
+         <font>
+            <Font name="Algerian" size="65.0" />
+         </font>
+      </Label>
+      <Label fx:id="lose" focusTraversable="false" layoutX="261.0" layoutY="146.0" text="Lose" textFill="#ee0404" visible="false">
+         <font>
+            <Font name="Algerian" size="65.0" />
+         </font>
+      </Label>
+      <Label fx:id="move" layoutX="20.0" layoutY="14.0" text="Puncte:" />
+      <Label fx:id="goodgame" focusTraversable="false" layoutX="261.0" layoutY="146.0" text="Goog Game!!!" visible="false">
          <font>
             <Font name="Algerian" size="65.0" />
          </font>

@@ -18,7 +18,7 @@ public class HelloController {
     private URL location;
 
     @FXML
-    private Label lablepause;
+    public Label lablepause, lose, move, goodgame;
 
     @FXML
     private ImageView bg1, bg2, player, enemy;
@@ -30,7 +30,10 @@ public class HelloController {
     public static boolean right = false;
     public static boolean left = false;
     public static boolean isPause = false;
+    public static boolean isGoodGame = false;
     private int playerSpeed = 3, jumptDownSpeed = 5;
+    int finaGame = 2000;
+    private int moveIncrement = 0;
 
     AnimationTimer timer = new AnimationTimer() {
         @Override
@@ -65,11 +68,55 @@ public class HelloController {
             enemyTransition.play();
 
         }
+
+        if (moveIncrement == finaGame)
+        {
+            isGoodGame = true;
+        }
+
+        if (isGoodGame)
+        {
+            playerSpeed = 0;
+            jumptDownSpeed = 0;
+            parallelTransition.pause();
+            enemyTransition.pause();
+            goodgame.setVisible(true);
+        }
+            double playerCenterX = player.getBoundsInParent().getMinX() + player.getBoundsInParent().getWidth() / 2;
+            double playerCenterY = player.getBoundsInParent().getMinY() + player.getBoundsInParent().getHeight() / 2;
+            double enemyCenterX = enemy.getBoundsInParent().getMinX() + enemy.getBoundsInParent().getWidth() / 2;
+            double enemyCenterY = enemy.getBoundsInParent().getMinY() + enemy.getBoundsInParent().getHeight() / 2;
+
+            double distance = Math.sqrt(Math.pow(playerCenterX - enemyCenterX, 2) + Math.pow(playerCenterY - enemyCenterY, 2));
+
+
+            if (distance <=75)
+            {
+                lose.setVisible(true);
+                playerSpeed = 0;
+                jumptDownSpeed = 0;
+                parallelTransition.pause();
+                enemyTransition.pause();
+            }
+            else
+            {
+                incrementMove();
+            }
+
+        }
+        private void incrementMove() {
+            if (moveIncrement <= finaGame)
+            {
+                moveIncrement++;
+            }
+            move.setText("Puncte:" + moveIncrement);
+            System.out.println("Move: " + moveIncrement);
         }
 
     };
     @FXML
     void initialize() {
+
         TranslateTransition bgOneTransition = new TranslateTransition(Duration.millis(5000), bg1);
         bgOneTransition.setFromX(0);
         bgOneTransition.setToX(bG_Width * -1);
