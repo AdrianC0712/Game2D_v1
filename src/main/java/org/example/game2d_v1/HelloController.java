@@ -78,7 +78,7 @@ public class HelloController {
         {
             playerSpeed = 0;
             jumptDownSpeed = 0;
-            parallelTransition.pause();
+            parallelTransition.stop();
             enemyTransition.pause();
             goodgame.setVisible(true);
         }
@@ -95,7 +95,7 @@ public class HelloController {
                 lose.setVisible(true);
                 playerSpeed = 0;
                 jumptDownSpeed = 0;
-                parallelTransition.pause();
+                parallelTransition.stop();
                 enemyTransition.pause();
             }
             else
@@ -110,7 +110,7 @@ public class HelloController {
                 moveIncrement++;
             }
             move.setText("Puncte:" + moveIncrement);
-            System.out.println("Move: " + moveIncrement);
+            //System.out.println("Move: " + moveIncrement);
         }
 
     };
